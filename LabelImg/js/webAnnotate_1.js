@@ -258,11 +258,6 @@ class LabelImage {
 				});
 			}
 		});
-		const savedAnnotations = localStorage.getItem('annotationData');
-        if (savedAnnotations) {
-            this.Arrays.imageAnnotateMemory = JSON.parse(savedAnnotations);
-            this.ReplaceAnnotateShow(); // 将数据渲染到展示画布
-        }
 	};
 
 	//----设置功能参数
@@ -1512,9 +1507,6 @@ class LabelImage {
 				contentType: item.contentType
 			});
 		});
-//		const imageKey = `annotationData_${imageName}`;
-//        localStorage.setItem(imageKey, JSON.stringify(this.Arrays.imageAnnotateMemory));
-		localStorage.setItem('annotationData', JSON.stringify(this.Arrays.imageAnnotateMemory));
 	};
 	//----按缩放程度修改数据展示面板数据（坐标点转换过程）
 	ReplaceAnnotateShow = () => {
